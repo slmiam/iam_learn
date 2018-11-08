@@ -8,7 +8,32 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
     <style type="text/css">
-        
+        div {
+            margin: 10px auto;
+            padding: auto;
+            text-align: center;
+            box-sizing: border-box;
+            border: 1px solid black;
+        }
+        #div_but {
+            margin-top: 20px;
+            height: 50px;
+
+        }
+        button {
+            width: auto;
+            padding: 5px;
+            margin: 0px 5px;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 0.5em;
+            box-sizing: content-box;
+        }
+        #preview {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
     </style>
 </head>
 <body>
@@ -20,5 +45,13 @@
         <button id="reset">reset</button>
     </div>
     <div id="preview"></div>
+    <script type="text/javascript">
+        document.getElementById("widen").addEventListener("mouseover",function(){
+            var widen_click = document.getElementById("widen");
+            var preview = document.getElementById("preview");
+            widen_click.style.backgroundColor = "grey";
+            preview.style.width = "200px";
+        })
+    </script>
 </body>
 </html>

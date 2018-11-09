@@ -51,7 +51,6 @@
         window.onload = function() {
             var preview = document.getElementById("preview");
             var btns = new Array("width","height","background","display","display");
-            var vals = new Array("200px","200px","red","none","block");
             var wVal = 100;
             var hVal = 100;
             for (var i = 0; document.getElementsByTagName("button").length > i; i++) {
@@ -88,6 +87,8 @@
                             }
                             break;
                         case 4:
+                            wVal = 100;
+                            hVal = 100;
                             break;
                         default:
                             alert("error");

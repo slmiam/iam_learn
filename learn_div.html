@@ -28,7 +28,7 @@
             text-align: center;
             border: 1px solid black;
             border-radius: 0.5em;
-            box-sizing: content-box;
+            box-sizing: border-box;
         }
         #preview {
             width: 100px;
@@ -46,9 +46,14 @@
         <button id="hide">hide</button>
         <button id="reset">reset</button>
     </div>
-    <div id="preview">100</div>
+    <div id="preview"></div>
     <script type="text/javascript">
         window.onload = function() {
+            var preview = document.getElementById("preview");
+            var btns = new Array("width","height","background","display","display");
+            var vals = new Array("200px","200px","red","none","block");
+            var wVal = 100;
+            var hVal = 100;
             for (var i = 0; document.getElementsByTagName("button").length > i; i++) {
                 var btn = document.getElementsByTagName("button");
                 btn[i].index = i;
@@ -57,6 +62,37 @@
                 })
                 btn[i].addEventListener("mouseout",function(){
                     this.style.backgroundColor = "white";
+                })
+                btn[i].addEventListener("click",function(){
+                    this.index == document.getElementsByTagName("button").length - 1 && (preview.style.cssText = "");
+                    switch (this.index) {
+                        case 0:
+                            if (wVal < 1500) {wVal += Number(wVal);} 
+                            preview.style[btns[this.index]] = wVal + "px";
+                            break;
+                        case 1:
+                            if (hVal < 1500) {hVal += Number(hVal);} 
+                            preview.style[btns[this.index]] = hVal + "px";
+                            break;
+                        case 2:
+                            var cVal = 0Xfff;
+                            preview.style[btns[this.index]] = "#" + parseInt(Math.random() * cVal) ;
+                            break;
+                        case 3:
+                            if (this.innerHTML == "hide") {
+                                preview.style[btns[this.index]] = "none";
+                                this.innerHTML = "display";
+                            } else {
+                                preview.style[btns[this.index]] = "block";
+                                this.innerHTML = "hide";
+                            }
+                            break;
+                        case 4:
+                            break;
+                        default:
+                            alert("error");
+                    }
+                    
                 })
             }
         }

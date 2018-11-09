@@ -21,6 +21,7 @@
 
         }
         button {
+            background-color: white;
             width: auto;
             padding: 5px;
             margin: 0px 5px;
@@ -32,6 +33,7 @@
         #preview {
             width: 100px;
             height: 100px;
+            color: #fff;
             background-color: black;
         }
     </style>
@@ -44,14 +46,20 @@
         <button id="hide">hide</button>
         <button id="reset">reset</button>
     </div>
-    <div id="preview"></div>
+    <div id="preview">100</div>
     <script type="text/javascript">
-        document.getElementById("widen").addEventListener("mouseover",function(){
-            var widen_click = document.getElementById("widen");
-            var preview = document.getElementById("preview");
-            widen_click.style.backgroundColor = "grey";
-            preview.style.width = "200px";
-        })
+        window.onload = function() {
+            for (var i = 0; document.getElementsByTagName("button").length > i; i++) {
+                var btn = document.getElementsByTagName("button");
+                btn[i].index = i;
+                btn[i].addEventListener("mouseover",function(){
+                    this.style.backgroundColor = "gray";
+                })
+                btn[i].addEventListener("mouseout",function(){
+                    this.style.backgroundColor = "white";
+                })
+            }
+        }
     </script>
 </body>
 </html>

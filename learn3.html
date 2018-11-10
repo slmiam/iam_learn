@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>learn3</title>
+	<style type="text/css">
+		body {
+			text-align: center;
+		}
+		input {
+
+		}
+		button {
+			border: 1px solid #000;	
+		}
+	</style>
+</head>
+<body>
+	<p><input type="text" value="shanTouShi" name=""/></p>
+	<p><input type="text" value="chaoYangQu" name=""/></p>
+	<p><button>chuanCan</button></p>
+	<script type="text/javascript">
+		document.getElementsByTagName("button")[0].addEventListener("mouseover",function(){
+			this.style.backgroundColor = "gray";
+			this.addEventListener("mouseout",function(){
+				this.style.backgroundColor = "#eee";
+			})
+		})
+		document.getElementsByTagName("button")[0].addEventListener("click",function(){
+			var aVals = document.getElementsByTagName("input");
+			for(var i = 0; i < aVals.length; i++) {
+				alert(aVals[i].value);
+			} 
+		})
+	</script>
+</body>
+</html>

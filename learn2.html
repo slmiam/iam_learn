@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>learn2</title>
+	<style type="text/css">
+		body {
+			background-color: pink;
+		}
+		div {
+			width: 800px;
+			margin: 20px auto;
+
+		}
+		button {
+			box-sizing: content-box;
+			width: 9px;
+			height: 9px;
+			padding: 0px;
+		}
+		#btnRed {
+			background-color: white;
+			border: 6px solid red;
+		}
+		#btnGreen {
+			background-color: green;
+			border: 6px solid green;
+		}
+		#btnBlack {
+			background-color: black;
+			border: 6px solid black;
+		}
+		ul {
+			height: auto;
+			height: 30px;
+			padding: 0px;
+			vertical-align: middle;
+		}
+		li {
+			float: left;
+			width: 122px;
+			line-height: 28px;
+			text-align: center;
+			border-right: 1px solid #fff;
+			list-style-type: none;
+			background-color: red;
+		}
+		a {
+			color: #fff;
+			text-decoration: none;
+		}
+
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<button id="btnRed"></button>
+			<button id="btnGreen"></button>
+			<button id="btnBlack"></button>
+		</ul>
+		<ul>
+			<li><a href="">News</a></li>
+			<li><a href="">Entertainment</a></li>
+			<li><a href="">Sports</a></li>
+			<li><a href="">Film</a></li>
+			<li><a href="">Music</a></li>
+			<li><a href="">Tourism</a></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var btns = document.getElementsByTagName("button");
+		var colors = ["red","green","black"];
+		var bColors = ["pink","Aquamarine","gray"];
+		var body_gColor = document.getElementsByTagName("body")[0];
+		var li_gColor = document.getElementsByTagName("li");
+		for(var i = 0; i < btns.length; i++) {
+			btns[i].index = i;
+			btns[i].addEventListener("click",function() {
+				for(var gBtn = 0; gBtn < btns.length; gBtn++) {
+					btns[gBtn].style.backgroundColor = colors[gBtn];
+				}
+				this.style.backgroundColor = "#fff";
+				body_gColor.style.backgroundColor = bColors[this.index];
+				for(var gLi = 0; gLi < li_gColor.length; gLi++) {
+					li_gColor[gLi].style.backgroundColor = colors[this.index];
+				}
+			})
+		}
+	</script>
+</body>
+</html>

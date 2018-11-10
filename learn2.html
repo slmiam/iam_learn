@@ -78,15 +78,15 @@
 		var li_gColor = document.getElementsByTagName("li");
 		for(var i = 0; i < btns.length; i++) {
 			btns[i].index = i;
-			btns[i].addEventListener("click",function() {
+			btns[i].addEventListener("click",function() {   
 				for(var gBtn = 0; gBtn < btns.length; gBtn++) {
 					btns[gBtn].style.backgroundColor = colors[gBtn];
-				}
-				this.style.backgroundColor = "#fff";
-				body_gColor.style.backgroundColor = bColors[this.index];
+				} //所有按钮背景色变色
+				this.style.backgroundColor = "#fff";                      //事件按钮背景色变白
+				body_gColor.style.backgroundColor = bColors[this.index];  //页面背景色变色
 				for(var gLi = 0; gLi < li_gColor.length; gLi++) {
 					li_gColor[gLi].style.backgroundColor = colors[this.index];
-				}
+				}   //导航栏变色
 			})
 		}
 	</script>

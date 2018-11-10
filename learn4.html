@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>learn4</title>
+	<style type="text/css">
+		body {
+			text-align: center;
+		}
+		button {
+			margin: 10px auto;
+			display: block;
+		}
+		div {
+			width: 150px;
+			height: 150px;
+			background-color: black;
+			margin: 10px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<button>click</button>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script type="text/javascript">
+		var divs = document.getElementsByTagName("div");
+		var colors = ["red","gray","white","green","blue","pink","yellow","black"];
+		document.getElementsByTagName("button")[0].addEventListener("click",function(){
+			var cColor = parseInt(Math.random() * 10);
+			for(var i = 0; i < divs.length; i++) {
+				divs[i].style.backgroundColor = colors[cColor];
+			}
+		})
+		setInterval(function() {
+			document.getElementsByTagName("button")[0].click();
+		},1000);
+	
+	</script>
+</body>
+</html>
